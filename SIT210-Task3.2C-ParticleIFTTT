@@ -1,0 +1,21 @@
+#define LEVEL 800
+
+void setup() {
+
+}
+
+void loop() 
+{
+    int dark = random(600, 1000);
+    
+    if (dark > LEVEL)
+    {
+        Particle.publish("Less Light", "dark");
+        delay(30000);
+    }
+    else
+    {
+        Particle.publish("Enough Light");
+        delay (30000);
+    }
+}
